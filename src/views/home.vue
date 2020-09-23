@@ -1,7 +1,7 @@
 <template lang="pug">
 .home
-  img(alt="Vue logo" src="/@/assets/logo.png")
-  .msg {{ msg }}
+  img.logo(src="/@/assets/logo.png")
+  .msg.gray {{ msg }}
   button(@click="count++") count is: {{ count }}
 </template>
 
@@ -18,11 +18,12 @@ export default {
 </script>
 
 <style scoped vars lang="stylus">
-@import "../color.styl"
 
 .home {
+  .logo {
+    width 1rem
+  }
   .msg {
-    color theme
   }
 }
 </style>
