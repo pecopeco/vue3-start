@@ -1,17 +1,13 @@
 <template lang="pug">
-.home
-  img.logo(src="@/assets/logo.png")
-  .msg.gray {{ msg }}
-  button(@click="count++") count is: {{ count }}
+.my
+  div my
 </template>
 
 <script>
 export default {
-  name: 'home',
+  name: 'my',
   data() {
     return {
-      msg: 'vue 3',
-      count: 0
     }
   }
 }
@@ -19,17 +15,12 @@ export default {
 
 <style scoped vars lang="stylus">
 
-.home {
+.my {
   &:after {
     content ''
     display flex
     width 100%
     height .48rem
-  }
-  .logo {
-    width 1rem
-  }
-  .msg {
   }
 }
 </style>

@@ -9,6 +9,16 @@ export default createRouter({
       component: () => import('/@/views/home.vue')
     },
     {
+      path: '/about',
+      name: 'about',
+      component: () => import('/@/views/about.vue')
+    },
+    {
+      path: '/my',
+      name: 'my',
+      component: () => import('/@/views/my.vue')
+    },
+    {
       path: '/*',
       redirect: '/'
     }

@@ -1,12 +1,15 @@
 <template lang="pug">
 router-view
+tabBar
 </template>
 
 <script>
+import tabBar from '/@/components/tabBar.vue'
 
 export default {
   name: 'App',
   components: {
+    tabBar
   }
 }
 </script>
@@ -37,5 +40,19 @@ html,body,#app {
 }
 img {
   width 100%
+}
+.iframe-wrap {
+  position fixed
+  top .42rem
+  right 0
+  bottom 0
+  left 0
+  -webkit-overflow-scrolling: touch
+  overflow-y scroll
+  iframe {
+    width 100%
+    height 100%
+    border none
+  }
 }
 </style>
