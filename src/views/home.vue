@@ -1,8 +1,9 @@
 <template lang="pug">
 .home
-  img.logo(src="@/assets/logo.png")
-  .msg.gray {{ msg }}
-  button(@click="count++") count is: {{ count }}
+  img.logo.active(src="/@/assets/logo.png")
+  .msg {{msg}}
+  .btn(@click="go('/detail')") go detail
+  .btn(@click="debounce(submit)") 提交
 </template>
 
 <script>
@@ -10,9 +11,16 @@ export default {
   name: 'home',
   data() {
     return {
-      msg: 'vue 3',
-      count: 0
+      msg: 'vue 3'
     }
+  },
+  methods: {
+    async submit () {
+      let res = await this.http.get('/hehe')
+      console.log(res)
+    }
+  },
+  mounted () {
   }
 }
 </script>

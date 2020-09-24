@@ -19,6 +19,11 @@ export default createRouter({
       component: () => import('/@/views/my.vue')
     },
     {
+      path: '/detail',
+      name: 'detail',
+      component: () => import('/@/views/detail.vue')
+    },
+    {
       path: '/*',
       redirect: '/'
     }
