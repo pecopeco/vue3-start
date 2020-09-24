@@ -107,27 +107,6 @@ export default {
         func.apply(this, arguments)
       }
     },
-    setSlide (router, store, toName, fromName) {
-      let pathArr = []
-      router.options.routes.map((item) => {
-        pathArr.push(item.name)
-      })
-      pathArr = [...new Set(pathArr)]
-      let fromIndex, toIndex
-      pathArr.map((item, index) => {
-        if (item === fromName) {
-          fromIndex = index
-        }
-        if (item === toName) {
-          toIndex = index
-        }
-      })
-      if (fromIndex > toIndex) {
-        store.dispatch('setSlide', 'van-slide-left')
-      } else {
-        store.dispatch('setSlide', 'van-slide-right')
-      }
-    },
     // 获取url参数
     getQueryString (name) {
       let reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i')
@@ -144,9 +123,6 @@ export default {
   computed: {
     userInfo () {
       return this.$store.state.userInfo
-    },
-    transitionName () {
-      return this.$store.state.transitionName
     }
   },
   watch: {
