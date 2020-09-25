@@ -38,6 +38,7 @@ export default {
     width 1rem
   }
   .msg {
+    color theme
   }
 }
 </style>
