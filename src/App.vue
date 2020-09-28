@@ -1,6 +1,4 @@
 <template lang="pug">
-//- transition(:name="transitionName")
-//-   router-view
 router-view
 tabBar
 </template>

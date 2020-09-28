@@ -26,6 +26,7 @@ export default {
 </script>
 
 <style scoped vars lang="stylus">
+// @import "../color.styl"
 
 .home {
   &:after {

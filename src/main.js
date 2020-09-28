@@ -21,12 +21,6 @@ document.documentElement.style.fontSize = document.documentElement.clientWidth /
 
 mixin.methods.setHttp()
 
-router.beforeEach(async (to, from, next) => {
-  // 设置动画翻页方向
-  mixin.methods.setSlide(router, store, to.path, from.path)
-  next()
-})
-
 const app = createApp(App)
 
 app.use(Vant)
