@@ -1,6 +1,6 @@
 import fly from 'flyio'
-import moment from 'moment'
 import lodash from 'lodash'
+import dayjs from 'dayjs'
 
 export default {
   components: {
@@ -8,7 +8,7 @@ export default {
   data () {
     return {
       debounceTimer: '',
-      moment: moment(),
+      moment: dayjs(),
       lodash: lodash
     }
   },
