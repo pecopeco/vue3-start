@@ -8,8 +8,7 @@ export default {
   data () {
     return {
       debounceTimer: '',
-      moment: dayjs(),
-      lodash: lodash
+      day: dayjs
     }
   },
   filters: {

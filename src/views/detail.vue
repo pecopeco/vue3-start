@@ -19,7 +19,7 @@ export default {
   name: 'about',
   data() {
     return {
-      time: this.day.format('YYYY年MM月DD HH:mm:ss'),
+      time: this.day().format('YYYY年MM月DD HH:mm:ss'),
       name: '',
       password: ''
     }
