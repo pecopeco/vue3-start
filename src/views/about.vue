@@ -1,18 +1,17 @@
 <template lang="pug">
 .about
-  div about
+  div {{msg}}
 </template>
 
 <script>
+import { ref } from 'vue'
+
 export default {
-  name: 'about',
-  data() {
+  setup () {
+    const msg = ref('Hello world: about')
     return {
+      msg
     }
-  },
-  methods: {
-  },
-  mounted () {
   }
 }
 </script>

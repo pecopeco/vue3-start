@@ -3,24 +3,32 @@
   img.logo.active(src="/@/assets/logo.png")
   .msg {{msg}}
   .btn(@click="go('/detail')") go detail
-  .btn(@click="debounce(submit)") 提交
+  .btn(@click="debounce(getData)") 提交
 </template>
 
 <script>
+import { ref } from 'vue'
+import mixin from '/@/mixin.js'
+
 export default {
-  name: 'home',
-  data() {
+  setup () {
+    const { store, day, go, http, userInfo, debounce } = mixin()
+
+    const msg = ref({text: 'Hello world'})
+
+    const getData = async () => {
+      await http.get('/hehe')
+      store.dispatch('setUser', 'teng')
+      console.log('getData', msg.value.text, userInfo.value, day().format('YYYY年MM月DD HH:mm:ss'))
+    }
+    getData()
+    
     return {
-      msg: 'vue 3'
+      go,
+      msg,
+      debounce,
+      getData
     }
-  },
-  methods: {
-    async submit () {
-      let res = await this.http.get('/hehe')
-      console.log(res)
-    }
-  },
-  mounted () {
   }
 }
 </script>

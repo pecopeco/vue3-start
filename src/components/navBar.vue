@@ -4,6 +4,7 @@
 </template>
 
 <script>
+import mixin from '/@/mixin.js'
 
 export default {
   props: {
@@ -12,15 +13,11 @@ export default {
       default: ''
     }
   },
-  components: {
-  },
-  data() {
+  setup () {
+    const { goBack } = mixin()
     return {
+      goBack
     }
-  },
-  methods: {
-  },
-  mounted () {
   }
 }
 </script>

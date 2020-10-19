@@ -10,33 +10,39 @@
     .item
       .label 密码
       van-field.input(v-model="password" type="password" placeholder="请输入密码" maxlength="12")
-  .btn(@click="debounce(submit)") 提交
+  .btn(@click="debounce(submit, 500)") 提交
 </template>
 
 <script>
+import { ref } from 'vue'
+import mixin from '/@/mixin.js'
 
 export default {
-  name: 'about',
-  data() {
-    return {
-      time: this.day().format('YYYY年MM月DD HH:mm:ss'),
-      name: '',
-      password: ''
-    }
-  },
-  methods: {
-    async submit () {
-      let err = this.validate([
-        {key: this.name, type: 'name', name: '姓名'},
-        {key: this.password, type: 'password', name: '密码'}
+  setup () {
+    const { day, toast, http, userInfo, validate, debounce } = mixin()
+
+    const time = ref(day().format('YYYY年MM月DD HH:mm:ss'))
+    const name = ref('')
+    const password = ref('')
+
+    const submit = async () => {
+      let err = validate([
+        {key: name.value, type: 'name', name: '姓名'},
+        {key: password.value, type: 'password', name: '密码'}
       ])
       if (err) {
-        return this.toast(err)
+        return toast(err)
       }
-      let res = await this.http.get('/hehe')
+      let res = await http.get('/hehe')
     }
-  },
-  mounted () {
+    
+    return {
+      time,
+      name,
+      password,
+      debounce,
+      submit
+    }
   }
 }
 </script>
