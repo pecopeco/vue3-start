@@ -5,14 +5,16 @@ import fly from 'flyio'
 import dayjs from 'dayjs'
 import { Toast } from 'vant'
 
-const config = { api:
-  process.env.NODE_ENV !== 'production'
-  ? '/api'
-  : process.env.VUE_APP_MODE === 'test'
-  ? 'https://test.baidu.com'
-  : 'https://baidu.com'}
-
 export default () => {
+  
+  // api配置
+  const config = { api:
+    process.env.NODE_ENV !== 'production'
+    ? '/api'
+    : process.env.VUE_APP_MODE === 'test'
+    ? 'https://test.baidu.com'
+    : 'https://baidu.com'
+  }
   
   // 日期处理函数
   const day = dayjs
@@ -147,6 +149,7 @@ export default () => {
   return {
     store,
     day,
+    config,
     go,
     goBack,
     toast,
