@@ -1,9 +1,9 @@
 <template lang="pug">
 .home
   img.logo.active(src="/@/assets/logo.png")
-  //- .msg {{msg}}
-  //- .btn(@click="go('/detail')") go detail
-  //- .btn(@click="debounce(getData)") 提交
+  .msg {{msg}}
+  .btn(@click="go('/detail')") go detail
+  .btn(@click="debounce(getData)") 提交
 </template>
 
 <script lang="ts">
