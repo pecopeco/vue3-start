@@ -15,20 +15,12 @@
         img(:src="props.active ? '@/assets/my-check.png' : '@/assets/my.png'")
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue'
 
-export default {
-  props: {
-  },
-  components: {
-  },
-  data() {
-    return {
-    }
-  },
-  methods: {
-  }
-}
+export default defineComponent({
+  name: 'tabBar'
+})
 </script>
 
 <style scoped vars lang="stylus">

@@ -3,17 +3,18 @@
   div {{ msg }}
 </template>
 
-<script>
-import { ref } from 'vue'
+<script lang="ts">
+import { defineComponent, ref } from 'vue'
 
-export default {
+export default defineComponent({
+  name: 'my',
   setup () {
     const msg = ref('Hello world: my')
     return {
       msg
     }
   }
-}
+})
 </script>
 
 <style scoped vars lang="stylus">

@@ -24,17 +24,17 @@ export default () => {
     router.push(path)
   }
 
-  // 返回
+  // // 返回
   const goBack = (key = -1) => {
     router.go(key)
   }
 
-  // toast
+  // // toast
   const toast = (text, delay = 1500) => {
     Toast({message: text, duration: delay})
   }
 
-  // http配置
+  // // http配置
   const http = (url, form = {}, type, contentType = 'application/json') => {
     url = url.indexOf("http") !== -1 ? url : config.api + url
     if (contentType === 'multipart/form-data') {
@@ -66,7 +66,7 @@ export default () => {
   http.delete = (url, form, contentType) => http(url, form, 'delete', contentType)
   http.put = (url, form, contentType) => http(url, form, 'put', contentType)
 
-  // 表单验证
+  // // 表单验证
   const validate = (arr) => {
     let err = {}
     arr.some((item) => {
@@ -113,7 +113,7 @@ export default () => {
     return err.msg || ''
   }
 
-  // 防抖
+  // // 防抖
   let debounceTimer
   const debounce = function (func, delay = 1000){
     if (debounceTimer) {
@@ -128,7 +128,7 @@ export default () => {
     }
   }
 
-  // 获取url参数
+  // // 获取url参数
   const getQuery = (name) => {
     let reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i')
     let param = location.search || location.hash
@@ -159,5 +159,6 @@ export default () => {
     debounce,
     getQuery,
     userInfo
+    day
   }
 }

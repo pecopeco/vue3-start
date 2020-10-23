@@ -1,5 +1,4 @@
-let path = require('path')
-
+import path from 'path'
 module.exports = {
   alias: {
     '/@/': path.resolve(__dirname, 'src')
@@ -8,7 +7,7 @@ module.exports = {
     '/api': {
       target: 'http://baidu.com',
       changeOrigin: true,
-      rewrite: path => path.replace(/^\/api/, '')
+      rewrite: (path: string) => path.replace(/^\/api/, '')
     }
   }
 }

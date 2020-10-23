@@ -3,15 +3,16 @@ router-view
 tabBar
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue'
 import tabBar from '/@/components/tabBar.vue'
 
-export default {
+export default defineComponent({
   name: 'App',
   components: {
     tabBar
   }
-}
+})
 </script>
 
 <style vars lang="stylus">

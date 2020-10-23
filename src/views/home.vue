@@ -1,16 +1,17 @@
 <template lang="pug">
 .home
   img.logo.active(src="/@/assets/logo.png")
-  .msg {{msg}}
-  .btn(@click="go('/detail')") go detail
-  .btn(@click="debounce(getData)") 提交
+  //- .msg {{msg}}
+  //- .btn(@click="go('/detail')") go detail
+  //- .btn(@click="debounce(getData)") 提交
 </template>
 
-<script>
-import { ref } from 'vue'
-import mixin from '/@/mixin.js'
+<script lang="ts">
+import { defineComponent, ref } from 'vue'
+import mixin from '/@/mixin'
 
-export default {
+export default defineComponent({
+  name: 'home',
   setup () {
     const { store, day, go, http, userInfo, debounce } = mixin()
 
@@ -30,7 +31,7 @@ export default {
       getData
     }
   }
-}
+})
 </script>
 
 <style scoped vars lang="stylus">

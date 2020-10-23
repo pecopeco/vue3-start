@@ -1,6 +1,6 @@
 <template lang="pug">
 .detail
-  nav-bar(title="详情")
+  navBar(title="详情")
   div about
   div {{time}}
   .form
@@ -13,11 +13,12 @@
   .btn(@click="debounce(submit, 500)") 提交
 </template>
 
-<script>
-import { ref } from 'vue'
+<script lang="ts">
+import { defineComponent, ref } from 'vue'
 import mixin from '/@/mixin.js'
 
-export default {
+export default defineComponent({
+  name: 'detail',
   setup () {
     const { day, toast, http, userInfo, validate, debounce } = mixin()
 
@@ -34,6 +35,7 @@ export default {
         return toast(err)
       }
       let res = await http.get('/hehe')
+      console.log(res, userInfo.value)
     }
     
     return {
@@ -44,7 +46,7 @@ export default {
       submit
     }
   }
-}
+})
 </script>
 
 <style scoped vars lang="stylus">

@@ -4,9 +4,11 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue'
 import mixin from '/@/mixin.js'
 
-export default {
+export default defineComponent({
+  name: 'navBar',
   props: {
     title: {
       type: String,
@@ -14,15 +16,15 @@ export default {
     }
   },
   setup () {
-    const { goBack } = mixin()
-    return {
-      goBack
-    }
+    // const { goBack } = mixin()
+    // return {
+    //   goBack
+    // }
   }
-}
+})
 </script>
 
-<style scoped lang="stylus">
+<style scoped vars lang="stylus">
 
 .nav-bar {
   height .42rem
