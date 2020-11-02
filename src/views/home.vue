@@ -34,7 +34,6 @@ export default {
 </script>
 
 <style scoped vars lang="stylus">
-// @import "../color.styl"
 
 .home {
   &:after {
@@ -47,7 +46,7 @@ export default {
     width 1rem
   }
   .msg {
-    color theme
+    color #008161
   }
 }
 </style>
