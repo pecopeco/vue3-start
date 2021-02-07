@@ -129,12 +129,16 @@ export default () => {
   }
 
   // 获取url参数
-  const getQuery = (name) => {
+  getQuery (name, getParam) {
     let reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i')
-    let param = location.search || location.hash
+    let param = getParam || location.search || location.hash
     let r = param.substr(1).match(reg)
     if (param.split(name).length > 2 && r) {
       param = '?' + param.split(r[0])[param.split(r[0]).length - 1]
+      // name参数数量仍然大于2，递归
+      if (param.split(name).length > 2) {
+        return getQuery(name, param)
+      }
       r = param.substr(1).match(reg)
     }
     if (r !== null) return unescape(r[2])
