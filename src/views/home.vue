@@ -33,7 +33,7 @@ export default {
 }
 </script>
 
-<style scoped vars lang="stylus">
+<style scoped lang="stylus">
 
 .home {
   &:after {

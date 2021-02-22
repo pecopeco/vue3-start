@@ -14,7 +14,7 @@ export default {
 }
 </script>
 
-<style vars lang="stylus">
+<style lang="stylus">
 
 backGray = #f6f7f9
 borderGray = #eff1f3

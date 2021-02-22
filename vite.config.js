@@ -4,6 +4,7 @@ module.exports = {
   alias: {
     '/@/': path.resolve(__dirname, 'src')
   },
+  open: true,
   proxy: {
     '/api': {
       target: 'http://baidu.com',
