@@ -129,7 +129,7 @@ export default () => {
   }
 
   // 获取url参数
-  getQuery (name, getParam) {
+  const getQuery = (name, getParam) => {
     let reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i')
     let param = getParam || location.search || location.hash
     let r = param.substr(1).match(reg)
