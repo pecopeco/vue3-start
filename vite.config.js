@@ -11,5 +11,12 @@ module.exports = {
       changeOrigin: true,
       rewrite: path => path.replace(/^\/api/, '')
     }
+  },
+  css: {
+    preprocessorOptions: {
+      styl: {
+        additionalData: `@import "@/style/color.styl";`
+      }
+    },
   }
 }
