@@ -32,35 +32,8 @@ html,body,#app {
   text-align center
   color #2c3e50
 }
-.bold {
-  font-weight bold
-}
-.gray {
-  color #969595
-}
 img {
   width 100%
-}
-.btn {
-  display flex
-  align-items center
-  justify-content center
-  width 2rem
-  height .38rem
-  margin .5rem auto 0
-  padding 0
-  line-height inherit
-  border-radius 8px
-  background #1989fa
-  color #fff
-  &:active {
-    filter grayscale(30%)
-  }
-}
-.active {
-  &:active {
-    background rgba(0, 0, 0 .1)
-  }
 }
 .iframe-wrap {
   position fixed
