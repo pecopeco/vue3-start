@@ -144,6 +144,16 @@ export default () => {
     if (r !== null) return unescape(r[2])
     return null
   }
+
+  // 深拷贝
+  const cleanCopy = (obj) => {
+    return JSON.parse(JSON.stringify(obj))
+  }
+
+  // 判断是否是数字
+  const isNum = (key) => {
+    return typeof key === 'number' && isFinite(key)
+  }
   
   // 计算属性
   const userInfo = computed(() => {
@@ -162,6 +172,8 @@ export default () => {
     validate,
     debounce,
     getQuery,
+    cleanCopy,
+    isNum,
     userInfo
   }
 }
