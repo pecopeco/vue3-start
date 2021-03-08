@@ -9,9 +9,9 @@ export default () => {
   
   // api配置
   const config = { api:
-    process.env.NODE_ENV !== 'production'
+    process.env.NODE_ENV === 'development'
     ? '/api'
-    : process.env.VUE_APP_MODE === 'test'
+    : process.env.NODE_ENV === 'test'
     ? 'https://test.baidu.com'
     : 'https://baidu.com'
   }
