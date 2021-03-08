@@ -167,7 +167,6 @@ export default () => {
     go,
     goBack,
     toast,
-    config,
     http,
     validate,
     debounce,
