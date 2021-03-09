@@ -1,6 +1,6 @@
 <template lang="pug">
 .home
-  img.logo.active(src="/@/assets/logo.png")
+  img.logo.active(src="@/assets/logo.png")
   .msg {{msg}}
   .btn(@click="go('/detail')") go detail
   .btn(@click="debounce(getData)") 提交
@@ -8,7 +8,7 @@
 
 <script>
 import { ref } from 'vue'
-import mixin from '/@/mixin.js'
+import mixin from '@/mixin.js'
 
 export default {
   setup () {

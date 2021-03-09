@@ -6,22 +6,22 @@ export default createRouter({
     {
       path: '/',
       name: 'home',
-      component: () => import('/@/views/home.vue')
+      component: () => import('@/views/home.vue')
     },
     {
       path: '/about',
       name: 'about',
-      component: () => import('/@/views/about.vue')
+      component: () => import('@/views/about.vue')
     },
     {
       path: '/my',
       name: 'my',
-      component: () => import('/@/views/my.vue')
+      component: () => import('@/views/my.vue')
     },
     {
       path: '/detail',
       name: 'detail',
-      component: () => import('/@/views/detail.vue')
+      component: () => import('@/views/detail.vue')
     },
     {
       path: '/*',

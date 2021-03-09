@@ -4,15 +4,18 @@
     van-tabbar-item(replace to="/")
       span 首页
       template(#icon="props")
-        img(:src="props.active ? '@/assets/home-check.png' : '@/assets/home.png'")
+        img(v-if="props.active" src="@/assets/home-check.png")
+        img(v-else src="@/assets/home.png")
     van-tabbar-item(replace to="/about")
       span 关于
       template(#icon="props")
-        img(:src="props.active ? '@/assets/about-check.png' : '@/assets/about.png'")
+        img(v-if="props.active" src="@/assets/about-check.png")
+        img(v-else src="@/assets/about.png")
     van-tabbar-item(replace to="/my")
       span 我的
       template(#icon="props")
-        img(:src="props.active ? '@/assets/my-check.png' : '@/assets/my.png'")
+        img(v-if="props.active" src="@/assets/my-check.png")
+        img(v-else src="@/assets/my.png")
 </template>
 
 <script>

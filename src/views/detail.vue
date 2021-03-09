@@ -15,7 +15,7 @@
 
 <script>
 import { ref } from 'vue'
-import mixin from '/@/mixin.js'
+import mixin from '@/mixin.js'
 
 export default {
   setup () {

@@ -1,9 +1,11 @@
+import vue from '@vitejs/plugin-vue'
 let path = require('path')
 
-module.exports = {
+// https://vitejs.dev/config/
+export default {
   base: './',
   alias: {
-    '/@/': path.resolve(__dirname, 'src')
+    '@': path.resolve(__dirname, 'src')
   },
   open: true,
   proxy: {
@@ -13,11 +15,5 @@ module.exports = {
       rewrite: path => path.replace(/^\/api/, '')
     }
   },
-  css: {
-    preprocessorOptions: {
-      styl: {
-        additionalData: `@import "@/style/color.styl";`
-      }
-    },
-  }
+  plugins: [vue()]
 }
